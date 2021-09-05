@@ -34,17 +34,26 @@ class _StoryPageState extends State<StoryPage> {
               fit: BoxFit.cover,
             ),
           ),
-          child: Padding(
-            padding: const EdgeInsets.all(15),
+          child: Container(
+            color: Color(0xff252B49).withAlpha(220),
+            padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 50),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 Expanded(
                   flex: 6,
                   child: Center(
-                    child: Text(
-                      storyBrain.getStory(),
-                      style: TextStyle(fontSize: 25),
+                    child: Container(
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(25),
+                          color: Colors.white10,
+                          border: Border.all(color: Colors.white12)),
+                      padding: EdgeInsets.all(25),
+                      // color: Colors.white.withOpacity(.1),
+                      child: Text(
+                        storyBrain.getStory(),
+                        style: TextStyle(fontSize: 22, height: 1.5, fontFamily: 'RaleWay'),
+                      ),
                     ),
                   ),
                 ),
@@ -52,7 +61,10 @@ class _StoryPageState extends State<StoryPage> {
                   child: TextButton(
                     child: Text(
                       storyBrain.getChoice1(),
-                      style: TextStyle(fontSize: 20),
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.normal,
+                      ),
                       textAlign: TextAlign.center,
                     ),
                     onPressed: () {
@@ -61,8 +73,12 @@ class _StoryPageState extends State<StoryPage> {
                       });
                     },
                     style: ButtonStyle(
+                      side: MaterialStateProperty.all<BorderSide>(BorderSide(
+                        width: 3,
+                        color: Color(0xff2B8CED),
+                      )),
                       foregroundColor: MaterialStateProperty.all<Color>(Colors.white),
-                      backgroundColor: MaterialStateProperty.all<Color>(Colors.black45),
+                      overlayColor: MaterialStateProperty.all<Color>(Color(0xff2B8CED)),
                       shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                         RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),
                       ),
@@ -76,7 +92,10 @@ class _StoryPageState extends State<StoryPage> {
                     child: TextButton(
                       child: Text(
                         storyBrain.getChoice2(),
-                        style: TextStyle(fontSize: 20),
+                        style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.normal,
+                        ),
                         textAlign: TextAlign.center,
                       ),
                       onPressed: () {
@@ -85,9 +104,13 @@ class _StoryPageState extends State<StoryPage> {
                         });
                       },
                       style: ButtonStyle(
+                        side: MaterialStateProperty.all<BorderSide>(BorderSide(
+                          width: 3,
+                          color: Color(0xff2B8CED),
+                        )),
                         padding: MaterialStateProperty.all<EdgeInsetsGeometry>(EdgeInsets.all(10)),
                         foregroundColor: MaterialStateProperty.all<Color>(Colors.white),
-                        backgroundColor: MaterialStateProperty.all<Color>(Colors.black45),
+                        overlayColor: MaterialStateProperty.all<Color>(Color(0xff2B8CED)),
                         shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                           RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),
                         ),
